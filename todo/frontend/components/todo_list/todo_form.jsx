@@ -8,7 +8,8 @@ class TodoForm extends React.Component {
 
     this.state = {
       title: '',
-      body: ''
+      body: '',
+      done: false
     };
   }
 
@@ -18,6 +19,19 @@ class TodoForm extends React.Component {
 
   handleBody(event){
     this.setState({body: event.currentTarget.value});
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+
+    const todo = Object.assign({}, this.state, {id: uniqueId() });
+    this.props.receiveTodo(todo);
+    this.setState({
+      title: "",
+      body: "",
+      done: false
+    });
+
   }
 
   render() {
@@ -30,6 +44,7 @@ class TodoForm extends React.Component {
           <br />
           <label>Body</label>
           <textarea onChange={this.handleBody.bind(this)} ></textarea>
+          <input type="submit" onClick={this.handleSubmit.bind(this)}></input>
         </form>
       </div>
     );
