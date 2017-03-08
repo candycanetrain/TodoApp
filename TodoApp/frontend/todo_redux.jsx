@@ -6,7 +6,7 @@ import allTodos from './reducers/selectors';
 import { receiveTodos, receiveTodo } from './actions/todo_actions';
 import thunk from './middleware/thunk';
 
-import {fetchTodos} from './util/todo_actions';
+import {fetchTodos} from './actions/todo_actions';
 
 window.store = store;
 window.selector = allTodos(store.getState());

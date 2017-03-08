@@ -27426,15 +27426,13 @@ var _thunk = __webpack_require__(325);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _todo_actions2 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./util/todo_actions\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.store = _store2.default;
 window.selector = (0, _selectors2.default)(_store2.default.getState());
 window.receiveTodo = _todo_actions.receiveTodo;
 window.receiveTodos = _todo_actions.receiveTodos;
-window.fetchTodos = _todo_actions2.fetchTodos;
+window.fetchTodos = _todo_actions.fetchTodos;
 window.thunk = _thunk2.default;
 
 document.addEventListener("DOMContentLoaded", function () {
